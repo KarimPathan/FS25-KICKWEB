@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Manrope";
-  src: url("fonts/manrope.ttf");
+  src: url("manrope.ttf");
 }
 
 :root {
@@ -31,7 +31,7 @@ body {
 
 .main-font {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  color: red;
+  color: blue;
 }
 
 .number {
