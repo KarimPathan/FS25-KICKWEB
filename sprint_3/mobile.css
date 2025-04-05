@@ -1,0 +1,252 @@
+@media (max-width: 430px) {
+    .main-container {
+      flex-direction: column;
+    }
+  
+    .grid-container {
+      grid-template-columns: 15% 0fr 1fr 1fr 1fr 15%;
+      grid-template-rows: 25% 1fr 1fr 1fr 10%;
+      width: 100vw;
+      height: 60vh;
+    }
+  
+    .number-container {
+      display: flex;
+      flex-direction: row;
+      height: 40vh;
+      width: 100vw;
+  
+      justify-content: space-between;
+      position: relative;
+    }
+  
+    /* TEXT ----------------------------------------------------------------------------------------------------------*/
+  
+    .having-thought {
+      grid-column: 4/6;
+      grid-row: 2/3;
+      font-size: 8vw;
+      place-self: center;
+    }
+  
+  
+    .decide {
+      grid-column: 1/4;
+      grid-row: 1/2;
+      font-size: 10vw;
+      max-height: 100%;
+      max-width: 100%;
+      text-align: left;
+      padding-left: 3%;
+      place-self: center;
+      align-self: end;
+      padding-bottom: 10%;
+    }
+  
+  
+    .having-decided {
+      grid-area: 3/3/4/4;
+      font-size: 4.5vw;
+      place-self: center;
+      text-align: center;
+      padding: 3%;
+    }
+  
+    .do-not-think {
+      grid-area: 4/4/5/5;
+      font-size: 4vw;
+      text-align: center;
+      place-self:center;
+      transform: translate(-15%);
+      padding: 3%;
+    }
+  
+    .do-not-think::after {
+      content: "Hdo-not-think";
+      display: inline-block;
+      animation: do-not-think var(--duration) linear infinite;
+      animation-fill-mode: forwards;
+      white-space: pre;
+    }
+    
+    @keyframes do-not-think {
+    
+      0%,
+      80% {
+        content: "— Do not \A think";
+      }
+    
+      80.01%,
+      100% {
+        content: "Too late \A to \A think";
+      }
+    }
+    
+  
+    .not {
+      grid-area: 4/5/5/6;
+      font-size: 3vw;
+      max-height: 100%;
+      max-width: 100%;
+      text-align: left;
+      padding: 6%;
+      place-self: center;
+  
+    }
+  
+    .not-think1 {
+      grid-area: 5/6/6/7;
+      font-size: 3vw;
+      text-align: center;
+  
+      padding: 4%;
+    }
+  
+    .not-think2 {
+      grid-area: 5/6/6/7;
+      font-size: 3vw;
+      max-height: 100%;
+      max-width: 100%;
+      text-align: left;
+    transform: translateY(1vh);    
+    padding: 4%;
+      z-index: 7;
+    }
+  
+    /* ---NUMBER-----------------------------------------------------------------------------------*/
+  
+    .number-container {
+      display: flex;
+      flex-direction: row;
+      height: 40vh;
+      width: 100vw;
+  
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    .num1 {
+      rotate: -180deg;
+      scale: -1;
+      width: 23vh;
+      height: 30vh;
+      line-height: 80%;
+      text-align: center;
+      font-size: 40vh;
+      position: relative;
+      background-color: rgb(243, 243, 243);
+      margin: -30%;
+      clip-path: inset(0 0 0 5%);
+      place-self: center;
+    }
+  
+  
+    .number.num1:nth-child(1) {
+      z-index: 3;
+      transform: translate(30vw, 1vw);
+  
+  
+    }
+  
+    .number.num1:nth-child(2) {
+      z-index: 4;
+      transform: translate(15vw, 1vw);
+  
+    }
+  
+    .number.num1:nth-child(3) {
+      z-index: 5;
+      transform: translate(0, 1vw);
+  
+    }
+  
+    .number.num1:nth-child(4) {
+      z-index: 2;
+      transform: translate(-15vw, 1vw);
+  
+    }
+  
+    .number.num1:nth-child(5) {
+      transform: translate(-30vw, 1vw);
+  
+      z-index: 1;
+    }
+  
+    /* RASTER------------------------------------------------------------------------------------------*/
+  
+    .ver1,  .ver4-1, .ver4-2, .ver2,  .ver3
+    {
+      border-left: 1.5px solid blue;
+      border-right: none;
+    }
+  
+    
+  
+   
+  
+    .ho1,
+    .ho2,
+    .ho3 {
+      box-shadow: inset 0 -1.3px 0 0 blue;
+  
+  
+    }
+  
+      /* CIRCLE------------------------------------------------------------------------------------------*/
+
+      
+    .big-circle {
+      grid-column: 1/7;
+      grid-row: 1/7;
+      width: 60vw;
+      height: 60vw;
+      border: 0.6vw solid rgb(108, 108, 255);
+      border-radius: 50%;
+      place-self: center;
+      z-index: 6;
+      max-width: 100%;
+      max-height: 100%;
+  
+    }
+  
+    .big-circle:nth-child(1) {
+      transform: translate(0, 45vh);
+      transform-origin: center;
+  
+    }
+  
+    .big-circle:nth-child(2) {
+      transform: translate(20vw, 45vh);
+  
+    }
+  
+    .big-circle:nth-child(3) {
+      transform: translate(-20vw, 45vh);
+  
+    }
+  
+  
+    .xl-circle {
+      grid-column: 5/6;
+      grid-row: 1/2;
+      height: 15vw;
+      width:15vw;
+    }
+  
+    .m-circle{
+      grid-column: 3/4;
+      grid-row: 4/5;
+  
+      height: 4vw;
+      width: 4vw;
+    }
+  
+    .l-circle{
+      grid-column: 4/5;
+  
+      grid-row: 3/4;
+      height: 7vw;
+      width: 7vw;
+    }
+  }
