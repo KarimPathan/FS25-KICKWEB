@@ -138,15 +138,15 @@
     height: 100%;
     width: 100%;
     padding-bottom: 2%;
-    justify-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-items: end;
     position: relative;
   }
 
   body.main-mode .decide::after {
     content: "decide";
-    font-size: 10vw;
-    transform: translateY(3vh);
+    font-size: 9.5vw;
+    transform: translate(-1vh,0vh);
     animation: decide var(--duration) steps(1) infinite;
     white-space: pre;
   }
@@ -249,7 +249,7 @@
     content: "Not-think";
     display: inline-block;
     animation: not-think var(--duration) steps(1) infinite;
-
+    transform: translateY(-2vh);
     animation-fill-mode: forwards;
     white-space: pre;
   }
