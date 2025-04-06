@@ -1,4 +1,4 @@
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .main-container {
     flex-direction: column;
   }
@@ -21,6 +21,80 @@
   }
 
   /* ANIMATIONS ----------------------------------------------------------------------------------------------------------*/
+  body.main-mode .number-container {
+
+    transform: translateY(-1vh);
+    overflow: visible;
+  }
+  body.intro-mode .number-container {
+
+    transform: translateY(-50vh);
+    overflow: visible;
+  }
+
+  @keyframes intro-number1 {
+    0%{transform: translate(45vw, 50vw);} 50% {  transform: translate(25vw, 50vw);} 100%{transform: translate(25vw, 112vw);}
+  }
+  
+  @keyframes intro-number2 {
+    0%{transform: translate(23vw, 50vw);} 50% {  transform: translate(10vw, 50vw);} 100%{transform: translate(10vw,112vw);}
+  }
+  
+  
+  @keyframes intro-number3 {
+    0%{transform: translate(0vw, 50vw);} 50% {  transform: translate(0vw, 50vw);} 100%{transform: translate(0vw, 112vw);}
+  }
+  
+  @keyframes intro-number4 {
+    0%{transform: translate(-22vw, 50vw);} 50% {  transform: translate(-15vw, 50vw);} 100%{transform: translate( -15vw,112vw);}
+  
+  }
+  
+  @keyframes intro-number5 {
+    0%{transform: translate(-45vw, 50vw);} 50% {  transform: translate(-30vw, 50vw);} 100%{transform: translate(-30vw,112vw);}
+  }
+  
+
+  body.intro-mode .number.num1:nth-child(1) {
+    z-index: 3;
+    transform: translate(-4vw, 30vw);
+    animation: intro-number1 var(--intronum) ease-in-out;
+    animation-fill-mode: forwards;
+  
+  }
+  
+  
+  body.intro-mode .number.num1:nth-child(2) {
+    z-index: 4;
+    transform: translate(-2vw, 30vw);
+    animation: intro-number2 var(--intronum) ease-in-out;
+    animation-fill-mode: forwards;
+  
+  }
+  
+  body.intro-mode .number.num1:nth-child(3) {
+    z-index: 5;
+    transform: translate(0vw, 30vw);
+    animation: intro-number3 var(--intronum) ease-in-out;
+    
+  }
+  
+  body.intro-mode .number.num1:nth-child(4) {
+    z-index: 2;
+    transform: translate(2vw, 30vw);
+    animation: intro-number4 var(--intronum) ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  
+  body.intro-mode .number.num1:nth-child(5) {
+    transform: translate(4vw, 30vw);
+    z-index: 1;
+    animation: intro-number5 var(--intronum) ease-in-out ;
+    animation-fill-mode: forwards;
+  }
+  
+
+
   @keyframes box-color-swap {
 
     0%,
@@ -34,46 +108,80 @@
     }
   }
 
+  @keyframes ver {
 
+    0%,
+    90% {
+      border-left: solid 1.2 blue;
+    }
+  
+    90.01%,
+    100% {
+      border-left: solid 1.2 rgb(243, 243, 243);
+  
+    }
+  }
   /* TEXT ----------------------------------------------------------------------------------------------------------*/
 
-  .having-thought {
+  body.main-mode .having-thought {
     grid-column: 4/6;
     grid-row: 2/3;
-    font-size:8.5vw;
+    font-size: 8.5vw;
     place-self: center;
   }
 
 
-  .decide {
+  body.main-mode .decide {
     display: flex;
     grid-column: 1/4;
     grid-row: 1/2;
     height: 100%;
     width: 100%;
-    font-size: 50vw !important;
-    padding-left: 3%;
-    justify-content: center;
-        align-items: flex-end;
+    padding-bottom: 2%;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
   }
 
+  body.main-mode .decide::after {
+    content: "decide";
+    font-size: 10vw;
+    transform: translateY(3vh);
+    animation: decide var(--duration) steps(1) infinite;
+    white-space: pre;
+  }
 
-  .having-decided {
+  @keyframes decide {
+
+    0%,
+    90% {
+      content: "decide";
+
+    }
+
+    90.01%,
+    100% {
+      content: "un \A decided";
+    }
+  }
+
+  body.main-mode .having-decided {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     grid-area: 3/3/4/4;
     font-size: 5vw;
     text-align: center;
     transform: translateX(3vw);
 
   }
-  body.main-mode .having-decided::after {
+
+  body.main-mode body.main-mode .having-decided::after {
     content: "Having decided";
     display: inline-block;
-    animation: having-decided var(--duration) linear infinite;
+    animation: having-decided var(--duration) steps(1) infinite;
     animation-fill-mode: forwards;
-    transform: translateX(3vw);
-
+    position: relative;
     white-space: pre;
   }
 
@@ -83,31 +191,33 @@
     90% {
       content: "Having \A decided";
       transform: translateX(0%);
-  
+
     }
-  
+
     90.01%,
     100% {
       content: "Didn't\A decide";
       transform: translateX(-0%);
     }
   }
-  
 
 
-  .do-not-think {
+
+  body.main-mode .do-not-think {
     grid-area: 4/4/5/5;
     font-size: 4vw;
+    display: flex;
     text-align: center;
-    place-self: center;
-    transform: translate(-10%);
+    align-items: center;
     padding: 3%;
   }
 
-  .do-not-think::after {
+  body.main-mode .do-not-think::after {
     content: "Hdo-not-think";
     display: inline-block;
-    animation: do-not-think var(--duration) linear infinite;
+    animation: do-not-think var(--duration) steps(1) infinite;
+    transform: translate(0%);
+
     animation-fill-mode: forwards;
     white-space: pre;
   }
@@ -115,45 +225,57 @@
   @keyframes do-not-think {
 
     0%,
-    80% {
-      content: "— Do not \A think";
+    90% {
+      content: "Do not \A think";
     }
 
-    80.01%,
+    90.01%,
     100% {
       content: "Too late \A to \A think";
     }
   }
 
 
-  .not {
-    grid-area: 4/5/5/6;
-    font-size: 3vw;
-    max-height: 100%;
-    max-width: 100%;
-    text-align: left;
-    padding: 6%;
-    place-self: center;
 
+  body.main-mode .not-think1 {
+    grid-area: 4/5/5/6;
+    font-size: 4vw;
+    text-align: center;
+    display: flex;
+    place-self: center;
+    padding: 4%;
+  }
+  body.main-mode .not-think1::after {
+    content: "Not-think";
+    display: inline-block;
+    animation: not-think var(--duration) steps(1) infinite;
+
+    animation-fill-mode: forwards;
+    white-space: pre;
   }
 
-  .not-think1 {
-    grid-area: 5/6/6/7;
-    font-size: 3vw;
-    text-align: center;
+  @keyframes not-think {
 
-    padding: 4%;
+    0%,
+    90% {
+      content: "not \A think";
+
+    }
+
+    90.01%,
+    100% {
+      content: "Too late";
+    }
+  }
+
+
+  .not {
+    display: none;
+
   }
 
   .not-think2 {
-    grid-area: 5/6/6/7;
-    font-size: 3vw;
-    max-height: 100%;
-    max-width: 100%;
-    text-align: left;
-    transform: translateY(1vh);
-    padding: 4%;
-    z-index: 7;
+   display: none;
   }
 
   /* ---NUMBER-----------------------------------------------------------------------------------*/
@@ -182,36 +304,59 @@
     margin: -30%;
     clip-path: inset(0 0 0 5%);
     place-self: center;
+    transform: translateX(21%);
   }
+
+
+  @keyframes number1 {
+    0%{transform: translate(25vw, 4vw);}50%{ transform: translate(45vw, 4vw);} 100% {  transform: translate(25vw, 4vw);}
+  }
+  
+  @keyframes number2 {
+    0%{transform: translate(10vw, 4vw);} 50%{transform: translate(23vw, 4vw);} 100% {transform: translate(10vw, 4vw);}
+  }
+  
+  @keyframes number4 {
+    0%{transform: translate(-15vw, 4vw);}50%{ transform: translate(-22vw, 4vw);} 100% {  transform: translate(-15vw, 4vw);}
+  }
+  
+  @keyframes number5 {
+    0%{transform: translate(-30vw, 4vw);} 50%{transform: translate(-45vw, 4vw);} 100% {transform: translate(-30vw, 4vw);}
+  }
+
+
 
 
   body.main-mode .number.num1:nth-child(1) {
     z-index: 3;
-    transform: translate(25vw, 4vw) !important;
-
+    transform: translate(25vw, 4vw) ;
+    animation: number1 var(--numduration) ease-in-out infinite , body-color-swap var(--duration) infinite, font-color-swap var(--duration) infinite;
 
   }
 
   body.main-mode .number.num1:nth-child(2) {
     z-index: 4;
-    transform: translate(10vw, 4vw)  !important ;
+    transform: translate(10vw, 4vw) ;
+    animation: number2 var(--numduration) ease-in-out infinite , body-color-swap var(--duration) infinite, font-color-swap var(--duration) infinite;
 
   }
 
   body.main-mode .number.num1:nth-child(3) {
     z-index: 5;
-    transform: translate(-3vw, 4vw)  !important;
+    transform: translate(0vw, 4vw) ;
 
   }
 
   body.main-mode .number.num1:nth-child(4) {
     z-index: 2;
-    transform: translate(-15vw, 4vw)  !important;
+    transform: translate(-15vw, 4vw) ;
+    animation: number4 var(--numduration) ease-in-out infinite , body-color-swap var(--duration) infinite, font-color-swap var(--duration) infinite;
 
   }
 
   body.main-mode .number.num1:nth-child(5) {
-    transform: translate(-30vw, 4vw)  !important;
+    transform: translate(-30vw, 4vw) ;
+    animation: number5 var(--numduration) ease-in-out infinite , body-color-swap var(--duration) infinite, font-color-swap var(--duration) infinite;
 
     z-index: 1;
   }
@@ -223,7 +368,7 @@
   .ver4-2,
   .ver2,
   .ver3 {
-    border-left: 1.5px solid blue;
+    border-left: 1.2px solid blue;
     border-right: none;
   }
 
@@ -288,11 +433,7 @@
     width: 4vw;
   }
 
-  .l-circle {
-    grid-column: 4/5;
-
-    grid-row: 3/4;
-    height: 7vw;
-    width: 7vw;
+  .s-circle {
+    display: none;
   }
 }
