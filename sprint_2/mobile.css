@@ -99,12 +99,12 @@
 
     0%,
     90% {
-      box-shadow: inset 0 -1.2px 0 0 blue;
+      box-shadow: inset 0 -0.2vh 0 0 blue;
     }
 
     90.01%,
     100% {
-      box-shadow: inset 0 -1.2px 0 0 rgb(206, 201, 230);
+      box-shadow: inset 0 -0.2vh 0 0 rgb(206, 201, 230);
     }
   }
 
@@ -112,15 +112,48 @@
 
     0%,
     90% {
-      border-left: solid 1.2 blue;
+      border-left: solid 0.2vh blue;
     }
   
     90.01%,
     100% {
-      border-left: solid 1.2 rgb(243, 243, 243);
+      border-left: solid 0.2vh rgb(243, 243, 243);
   
     }
   }
+
+
+  @keyframes ver3-gradient {
+
+    0%,90% {
+      border-image: linear-gradient(to top, rgb(206, 201, 230) 10%, blue 75%) 0.5;
+    }
+    
+    90.01%,100% {
+      border-image: linear-gradient(to top, blue 5%, rgb(206, 201, 230) 90%) 0.5;
+    }
+    }
+  @keyframes ver4-2-gradient {
+  
+    0%,90% {
+      border-image: linear-gradient(to top, rgb(206, 201, 230) 50%, blue 75%) 0.5;
+    }
+  
+    90.01%,100% {
+      border-image: linear-gradient(to top, blue 9%, rgb(206, 201, 230) 90%) 0.5; 
+  
+    }
+  }
+
+  @keyframes border-color-swap {
+
+    0%,90% {
+      border: 0.2vh solid rgb(99, 78, 255);
+    }
+    90.01%,100% {
+      border: 0.2vh solid rgb(217, 217, 217);
+    }}
+  
   /* TEXT ----------------------------------------------------------------------------------------------------------*/
 
   body.main-mode .having-thought {
@@ -269,12 +302,12 @@
   }
 
 
-  .not {
+  body.main-mode .not {
     display: none;
 
   }
 
-  .not-think2 {
+  body.main-mode .not-think2 {
    display: none;
   }
 
@@ -368,7 +401,7 @@
   .ver4-2,
   .ver2,
   .ver3 {
-    border-left: 0.3vw solid blue;
+    border-left: 0.2vh solid blue;
     border-right: none;
   }
 
@@ -379,7 +412,7 @@
   .ho1,
   .ho2,
   .ho3 {
-    box-shadow: inset 0 0.2vw 0 0 blue;
+    box-shadow: inset 0 0.2vh 0 0 blue;
 
 
   }
