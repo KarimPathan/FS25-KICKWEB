@@ -10,7 +10,7 @@
   --delay: 0.6
 }
 
-/*----INTRO-ANIMATION----------*/
+/* INTRO-MODE ---------------------------------------------------------------------------------------------------------------*/
 body.intro-mode {
   background-color: rgb(243, 243, 243); 
   animation: none;
@@ -95,67 +95,35 @@ body.intro-mode .num1 {
 }
 
 @keyframes intro-animation {
-  0%,50% {
-  background-color: rgb(243, 243, 243);}
+  0%,50% {background-color: rgb(243, 243, 243);}
   50.01%,100% {background-color: blue;}
 }
+
+
+/* MAIN-MODE ---------------------------------------------------------------------------------------------------------------*/
 
 body.main-mode {
   background-color: rgb(243, 243, 243); 
 }
-body.main-mode .grid-container,
-body.main-mode .main-font,
-body.main-mode .having-thought,
-body.main-mode .decide,
-body.main-mode .having-decided,
-body.main-mode .do-not-think,
-body.main-mode .not,
-body.main-mode .not-think1,
-body.main-mode .not-think2,
-body.main-mode .xl-circle,
-body.main-mode .l-circle,
-body.main-mode .m-circle,
-body.main-mode .s-circle,
-body.main-mode .ver1,
-body.main-mode .ver2,
-body.main-mode .ver3,
-body.main-mode .ver4-1,
-body.main-mode .ver4-2,
-body.main-mode .ho1,
-body.main-mode .ho2,
-body.main-mode .ho3 {
+body.main-mode .grid-container,body.main-mode .main-font,body.main-mode .having-thought,body.main-mode .decide,body.main-mode .having-decided,
+body.main-mode .do-not-think,body.main-mode .not,body.main-mode .not-think1,body.main-mode .not-think2,body.main-mode .xl-circle,
+body.main-mode .l-circle,body.main-mode .m-circle,body.main-mode .s-circle,body.main-mode .ver1,body.main-mode .ver2,
+body.main-mode .ver3,body.main-mode .ver4-1,body.main-mode .ver4-2,body.main-mode .ho1,body.main-mode .ho2,body.main-mode .ho3 {
   opacity: 0; 
   pointer-events: none;
   transition: opacity 0.5s ease-out; 
 }
 
-body.main-mode .grid-container,
-body.main-mode .main-font,
-body.main-mode .having-thought,
-body.main-mode .decide,
-body.main-mode .having-decided,
-body.main-mode .do-not-think,
-body.main-mode .not,
-body.main-mode .not-think1,
-body.main-mode .not-think2,
-body.main-mode .xl-circle,
-body.main-mode .l-circle,
-body.main-mode .m-circle,
-body.main-mode .s-circle,
-body.main-mode .ver1,
-body.main-mode .ver2,
-body.main-mode .ver3,
-body.main-mode .ver4-1,
-body.main-mode .ver4-2,
-body.main-mode .ho1,
-body.main-mode .ho2,
-body.main-mode .ho3 {
+body.main-mode .grid-container,body.main-mode .main-font,body.main-mode .having-thought,body.main-mode .decide,body.main-mode .having-decided,
+body.main-mode .do-not-think,body.main-mode .not,body.main-mode .not-think1,body.main-mode .not-think2,body.main-mode .xl-circle,
+body.main-mode .l-circle,body.main-mode .m-circle,body.main-mode .s-circle,body.main-mode .ver1,body.main-mode .ver2,
+body.main-mode .ver3,body.main-mode .ver4-1,body.main-mode .ver4-2,body.main-mode .ho1,body.main-mode .ho2,body.main-mode .ho3 {
   opacity: 1;
   pointer-events: all;
   
 }
-/*----MAIN-MODE----------*/
 
+/* LAYOUT ---------------------------------------------------------------------------------------------------------------*/
 
 body {
   background-color: rgb(243, 243, 243);
@@ -216,25 +184,16 @@ body {
 
 @keyframes ver {
 
-  0%,90% {
-    border-left: solid 0.3vh blue;
-  }
-
-  90.01%,100% {
-    border-left: solid  0.3vh rgb(243, 243, 243);
-  }
+  0%,90% {border-left: solid 0.3vh blue;}
+  90.01%,100% {border-left: solid  0.3vh rgb(243, 243, 243);}
 }
-
 
 
 body {
   animation: body-color-swap var(--duration) linear infinite;
     animation-fill-mode: forwards;
 }
-.xl-circle,
-.l-circle,
-.m-circle,
-.s-circle {
+.xl-circle,.l-circle,.m-circle,.s-circle {
   animation: background-color-swap var(--duration) linear infinite;
   animation-fill-mode: forwards;
 
@@ -242,9 +201,7 @@ body {
 
 
 
-.main-font,
-.number,
-.big-circle {
+.main-font,.number {
   animation: font-color-swap var(--duration) linear infinite;
   animation-fill-mode: forwards;
 }
@@ -259,65 +216,46 @@ body {
   animation-fill-mode: forwards;
 }
 
-@keyframes box-color-swap {
-  0%,90% {box-shadow: inset 0 -0.2vh 0 0 blue;}
-  90.01%,100% {box-shadow: inset 0 -0.2vh 0 0 rgb(206, 201, 230);}
-}
-
-
-@keyframes border-color-swap {
-
-  0%,90% {
-    border: 0.3vh solid rgb(99, 78, 255);
-  }
-  90.01%,100% {
-    border: 0.3vh solid rgb(217, 217, 217);
-  }}
 
 .big-circle {
   animation: border-color-swap var(--duration) linear infinite;
   animation-fill-mode: forwards;
 }
 
+@keyframes box-color-swap {
+
+  0%,90% {box-shadow: inset 0 -0.2vh 0 0 blue;}
+  90.01%,100% {box-shadow: inset 0 -0.2vh 0 0 rgb(206, 201, 230);}
+}
+
+@keyframes border-color-swap {
+
+  0%,90% {border: 0.3vh solid rgb(99, 78, 255);}
+  90.01%,100% {border: 0.3vh solid rgb(217, 217, 217);}
+}
 
 @keyframes ver1-gradient {
 
-  0%,90% {
-    border-image: linear-gradient(to top, rgb(206, 201, 230) 25%, blue 75%) 0.5;
-  }
-  90.01%,100% {
-    border-image: linear-gradient(to top, blue 25%, rgb(206, 201, 230) 75%) 0.5;
-  }}
+  0%,90% {border-image: linear-gradient(to top, rgb(206, 201, 230) 25%, blue 75%) 0.5;}
+  90.01%,100% {border-image: linear-gradient(to top, blue 25%, rgb(206, 201, 230) 75%) 0.5;}
+}
 
 @keyframes ver2-gradient {
 
-  0%,90% {
-    border-image: linear-gradient(to top, rgb(206, 201, 230) 9%, blue 75%) 0.5;
-  }
-  
-  90.01%,100% {
-    border-image: linear-gradient(to top, blue 9%, rgb(206, 201, 230) 75%) 0.5; 
-  } }
+  0%,90% { border-image: linear-gradient(to top, rgb(206, 201, 230) 9%, blue 75%) 0.5;}
+  90.01%,100% { border-image: linear-gradient(to top, blue 9%, rgb(206, 201, 230) 75%) 0.5; }
+ }
+
 @keyframes ver3-gradient {
 
-  0%,90% {
-    border-image: linear-gradient(to top, rgb(206, 201, 230) 10%, blue 75%) 0.5;
+  0%,90% {border-image: linear-gradient(to top, rgb(206, 201, 230) 10%, blue 75%) 0.5;}
+  90.01%,100% {  border-image: linear-gradient(to bottom, rgb(206, 201, 230) 100%, blue 0%) 0.5;}
   }
-  
-  90.01%,100% {
-    border-image: linear-gradient(to bottom, rgb(206, 201, 230) 100%, blue 0%) 0.5;
-  }
-  }
+
 @keyframes ver4-2-gradient {
 
-  0%,90% {
-    border-image: linear-gradient(to top, rgb(206, 201, 230) 50%, blue 75%) 0.5;
-  }
-
-  90.01%,100% {
-    border-image: linear-gradient(to bottom, rgb(206, 201, 230) 100%, blue 0%) 0.5;
-
-  }
+  0%,90% {border-image: linear-gradient(to top, rgb(206, 201, 230) 50%, blue 75%) 0.5;}
+  90.01%,100% { border-image: linear-gradient(to bottom, rgb(206, 201, 230) 100%, blue 0%) 0.5;}
 }
 
 
@@ -362,19 +300,8 @@ body.main-mode .having-thought::after {
 
 @keyframes having-thought {
 
-  0%,
-  90% {
-    content: "Having  \A thought —";
-    transform: translateX(-0%);
-  }
-
-  90.01%,
-  100% {
-    content: "Didn't  \A think —";
-    transform: translateX(-10%);
-    
-    
-  }
+  0%,90% {content: "Having  \A thought —";transform: translateX(-0%);}
+  90.01%,100% {content: "Didn't  \A think —";transform: translateX(-10%);}
 }
 
 body.main-mode .decide {
@@ -401,20 +328,8 @@ body.main-mode .decide::after {
 
 @keyframes decide {
 
-  0%,
-  90% {
-    content: "decide";
-
-    font-size: 5vw;
-
-  }
-
-  90.01%,
-  100% {
-    content: "un \A decided";
-    font-size: 4.5vw;
-
-  }
+  0%,90% {content: "decide";font-size: 5vw; }
+  90.01%, 100% {content: "un \A decided";font-size: 4.5vw;}
 }
 
 
@@ -442,18 +357,8 @@ body.main-mode .having-decided::after {
 
 @keyframes having-decided {
 
-  0%,
-  90% {
-    content: "Having \A decided";
-    transform: translateX(0%);
-
-  }
-
-  90.01%,
-  100% {
-    content: "Didn't\A decide";
-    transform: translateX(9vw);
-  }
+  0%,90% {content: "Having \A decided";transform: translateX(0%);}
+  90.01%,100% {content: "Didn't\A decide";transform: translateX(9vw);}
 }
 
 
@@ -479,18 +384,8 @@ body.main-mode .do-not-think::after {
 
 @keyframes do-not-think {
 
-  0%,
-  90% {
-    content: "— Do not \A think";
-    transform: translateX(0%);
-
-  }
-
-  90.01%,
-  100% {
-    content: "— Too late to\A think";
-    transform: translateX(-2vh);
-  }
+  0%,90% {  content: "— Do not \A think";  transform: translateX(0%); }
+  90.01%,100% { content: "— Too late to\A think";transform: translateX(-2vh);}
 }
 
 
@@ -528,16 +423,8 @@ body.main-mode .not-think1::after {
 
 @keyframes not-think {
 
-  0%,
-  90% {
-    content: "not \A    think";
-
-  }
-
-  90.01%,
-  100% {
-    content: "Too \A     late";
-  }
+  0%,90% { content: "not \A    think"; }
+  90.01%,100% { content: "Too \A     late";}
 }
 
 
@@ -590,6 +477,7 @@ body.main-mode .l-circle {
   transition-delay: 200ms;
   transition-timing-function: ease;
 }
+
 body.main-mode .l-circle:hover {
   border-radius: 0% ;
   transition-delay: 0ms;
@@ -688,9 +576,6 @@ body.main-mode .s-circle {
   
 }
 
-
-
-
 .num1 {
 
   rotate: -90deg;
@@ -703,9 +588,6 @@ body.main-mode .s-circle {
   margin: -30%;
   clip-path: inset(0 0 0 5%);
   position: relative;
-
-  
-
 
 }
 
@@ -733,9 +615,6 @@ body.main-mode .number.num1:nth-child(1) {
   animation-fill-mode: forwards;
 
 }
-
-
-
 
 body.main-mode .number.num1:nth-child(2) {
   z-index: 4;
@@ -815,8 +694,6 @@ body.main-mode .number.num1:nth-child(5) {
   grid-row: 1/1;
   box-shadow: inset 0 -0.2vh 0 0 blue;
 }
-
-
 
 
 .ho2 {

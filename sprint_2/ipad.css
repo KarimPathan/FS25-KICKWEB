@@ -1,10 +1,11 @@
 @media (max-width: 1024px) {
 
+
+  /* LAYOUT ---------------------------------------------------------------------------------------------------------------*/
+
   .main-container {
     flex-direction: column;
   }
-
-
 
   .grid-container {
     width: 100vw;
@@ -14,7 +15,6 @@
 
 
   }
-
 
   body.intro-mode .number-container {
     display: flex;
@@ -51,6 +51,7 @@
     place-self: center;
   }
 
+  /* INTRO-MODE ANIMATIONS ---------------------------------------------------------------------------------------------------------------*/
 
 
   body.intro-mode .number-container {
@@ -154,16 +155,7 @@
 
   @keyframes decide {
 
-    0%,
-    90% {
-      content: "decide";
-
-    }
-
-    90.01%,
-    100% {
-      content: "un \A decided";
-    }
+    0%,90% {  content: "decide";}90.01%,100% {  content: "un \A decided";}
   }
 
   body.main-mode .having-decided {
@@ -190,18 +182,7 @@
 
   @keyframes having-decided {
 
-    0%,
-    90% {
-      content: "Having \A decided";
-      transform: translateX(0%);
-
-    }
-
-    90.01%,
-    100% {
-      content: "Didn't\A decide";
-      transform: translateX(-10%);
-    }
+    0%,90% { content: "Having \A decided"; transform: translateX(0%);} 90.01%,100% { content: "Didn't\A decide"; transform: translateX(-10%);  }
   }
 
   body.main-mode .do-not-think {
@@ -237,6 +218,8 @@
   }
 
   /*NUMBER--------------------------------------------------------------------------------------*/
+
+
   @keyframes number1 {
     0%{transform: translate(25vw, 22.5vh);}50%{ transform: translate(41vh, 22.5vh);} 100% {  transform: translate(25vw, 22.5vh);}
   }
@@ -252,8 +235,6 @@
   @keyframes number5 {
     0%{transform: translate(-30vw, 22.5vh);} 50%{transform: translate(-41vh, 22.5vh);} 100% {transform: translate(-30vw, 22.5vh);}
   }
-
-
 
 
   body.main-mode .number.num1:nth-child(1) {
